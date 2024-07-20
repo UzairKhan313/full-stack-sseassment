@@ -34,15 +34,11 @@ function App() {
       <section className="container mx-auto p-4 flex items-center justify-center">
         <div className=" font-bold text-2xl">
           <h2>Something went wrong. Pleases try again letter.</h2>
-          {/* <p>{error.error}</p> */}
+          {/* <p>{error?.error}</p> */}
         </div>
       </section>
     );
   }
-
-  // const filteredUsers = users.filter((user) =>
-  //   user[filterOption].toLowerCase().includes(search.toLowerCase())
-  // );
 
   return (
     <section className="container mx-auto p-8">

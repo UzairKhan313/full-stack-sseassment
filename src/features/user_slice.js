@@ -13,7 +13,6 @@ const userSlice = createSlice({
   reducers: {
     setUsers: (state, action) => {
       state.users = action.payload;
-      // Filter users when users are initially set
       state.filteredUsers = state.users.filter((user) =>
         user[state.filterOption]
           .toLowerCase()
@@ -22,7 +21,6 @@ const userSlice = createSlice({
     },
     removeUser: (state, action) => {
       state.users = state.users.filter((user) => user.id !== action.payload);
-      // Optionally update filteredUsers if needed
       state.filteredUsers = state.users.filter((user) =>
         user[state.filterOption]
           .toLowerCase()
@@ -35,7 +33,6 @@ const userSlice = createSlice({
       );
       if (index !== -1) {
         state.users[index] = action.payload;
-        // Optionally update filteredUsers if needed
         state.filteredUsers = state.users.filter((user) =>
           user[state.filterOption]
             .toLowerCase()
@@ -52,7 +49,6 @@ const userSlice = createSlice({
     },
     setSearch: (state, action) => {
       state.search = action.payload;
-      // Apply filtering based on the updated search term
       state.filteredUsers = state.users.filter((user) =>
         user[state.filterOption]
           .toLowerCase()
@@ -61,7 +57,7 @@ const userSlice = createSlice({
     },
     setFilterOption: (state, action) => {
       state.filterOption = action.payload;
-      // Apply filtering based on the new filter option
+
       state.filteredUsers = state.users.filter((user) =>
         user[state.filterOption]
           .toLowerCase()
